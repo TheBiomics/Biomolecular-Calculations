@@ -83,7 +83,9 @@ class Configuration():
       self.coordinates.append(atom.get_coord())
 
   def __filter_coordinates(self):
-
+    """
+    Filter coordinates to calculate the grid of selected res only
+    """
     pass
 
 

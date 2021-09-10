@@ -6,6 +6,8 @@ Options
 
 
 """
+import os as OS
+
 import argparse as ARGUMENT
 import sys as SYSTEM
 from scripts.config import Configuration
@@ -25,7 +27,8 @@ def main():
   #     Please provide atleast one PDB File location or
   #     execute this script in the directory where PDB file resides
   #   """)
-  _file_path = "D:/www/TheBiomicsBiomolecularCalculations/tests/pdbs/2mps.pdb"
+  file_dir = OS.path.dirname(OS.path.abspath(__file__))
+  _file_path = f"{file_dir}{OS.sep}tests/pdbs/2mps.pdb"
   config = Configuration()
   config.write(**{"file": _file_path})
 
