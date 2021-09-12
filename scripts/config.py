@@ -1,6 +1,5 @@
 import os as OS
 import math as MATH
-from typing import final
 from Bio.PDB import *
 
 class Configuration():
@@ -56,24 +55,6 @@ class Configuration():
       "size_y": size_y,
       "size_z": size_z,
     }
-
-  """
-  Writes VINA config Only
-  """
-  def write(self, **params):
-    self.file = params.get("file")
-    self.__read_file()
-    self.__set_properties()
-    self.__set_vina_config()
-    self.__set_parameters(**params)
-
-    config = self.params
-    final_config = [f"{config_key} = {config[config_key]}\n" for config_key in config.keys() if config[config_key] is not None]
-
-    with open(f"{self.output_file_location}{OS.sep}{self.output_file_name}", "w+", encoding="utf-8") as f:
-      f.writelines(final_config)
-
-    pass
 
   def __read_file(self):
     parser = PDBParser()
@@ -136,3 +117,21 @@ class Configuration():
       "size": size,
       "distance": distance,
     }
+
+  """
+  Writes VINA config Only
+  """
+  def write(self, **params):
+    self.file = params.get("file")
+    self.__read_file()
+    self.__set_properties()
+    self.__set_vina_config()
+    self.__set_parameters(**params)
+
+    config = self.params
+    final_config = [f"{config_key} = {config[config_key]}\n" for config_key in config.keys() if config[config_key] is not None]
+
+    with open(f"{self.output_file_location}{OS.sep}{self.output_file_name}", "w+", encoding="utf-8") as f:
+      f.writelines(final_config)
+
+    return f"{self.output_file_location}{OS.sep}{self.output_file_name}."
