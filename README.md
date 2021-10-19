@@ -57,10 +57,10 @@ Edit this list or provide the requirement through comments
 * Time taken for calculation
 * Adding references for different options and suitable options
 
-# Ref
-https://www.cgl.ucsf.edu/chimera/docs/UsersGuide/tutorials/pdbintro.html
-https://github.com/schrodinger/pymol-open-source/blob/master/INSTALL
-https://pymolwiki.org/index.php/Windows_Install
+# Ref and downloades
+* https://www.cgl.ucsf.edu/chimera/docs/UsersGuide/tutorials/pdbintro.html
+* https://github.com/schrodinger/pymol-open-source/blob/master/INSTALL
+* https://pymolwiki.org/index.php/Windows_Install
 
 
 # Managing using conda
@@ -70,7 +70,7 @@ conda env export --name GridCalculator --no-builds > docs/GridCalculator.yml
 conda env create --file docs/GridCalculator.yml
 ```
 
-# Installations
+# Installations and dependencies
 
 ```
 pip install biopython
